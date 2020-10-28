@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       localeResolutionCallback:
           (Locale locale, Iterable<Locale> supportedLocales) => locale,
       localizationsDelegates: [
-        const NBLocalizationsDelegate(),
+        const RGLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,

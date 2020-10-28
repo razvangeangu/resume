@@ -63,8 +63,8 @@ class RGLocalizations {
   // #endregion "Sign Up"
 }
 
-class NBLocalizationsDelegate extends LocalizationsDelegate<RGLocalizations> {
-  const NBLocalizationsDelegate();
+class RGLocalizationsDelegate extends LocalizationsDelegate<RGLocalizations> {
+  const RGLocalizationsDelegate();
 
   @override
   bool isSupported(Locale locale) =>
@@ -74,5 +74,5 @@ class NBLocalizationsDelegate extends LocalizationsDelegate<RGLocalizations> {
   Future<RGLocalizations> load(Locale locale) => RGLocalizations.load(locale);
 
   @override
-  bool shouldReload(NBLocalizationsDelegate old) => false;
+  bool shouldReload(RGLocalizationsDelegate old) => false;
 }
