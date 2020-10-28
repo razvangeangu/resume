@@ -1,0 +1,18 @@
+{
+  "@@last_modified": "2020-10-12T00:55:28.070129",
+  "appName": "flutterstarter",
+  "@appName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "signUpEmailError": "signUpEmailError",
+  "@signUpEmailError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "signUpPasswordError": "signUpPasswordError",
+  "@signUpPasswordError": {
+    "type": "text",
+    "placeholders": {}
+  }
+}
