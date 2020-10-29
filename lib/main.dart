@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
       title: RGLocalizations.of(context)?.appName ?? 'flutterstarter',
       theme: RGTheme.light,
       darkTheme: RGTheme.dark,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       initialRoute: RGRoutes.root,
       routes: RGRoutes.routes,
     );
