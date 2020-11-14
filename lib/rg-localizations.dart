@@ -14,10 +14,10 @@ class RGLocalizations {
   RGLocalizations(this.localeName);
 
   static Future<RGLocalizations> load(Locale locale) {
-    final String name = locale.countryCode != null && locale.countryCode.isEmpty
+    final name = locale.countryCode != null && locale.countryCode.isEmpty
         ? locale.languageCode
         : locale.toString();
-    final String localeName = Intl.canonicalizedLocale(name);
+    final localeName = Intl.canonicalizedLocale(name);
 
     return initializeMessages(localeName).then((_) {
       return RGLocalizations(localeName);

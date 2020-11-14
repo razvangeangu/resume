@@ -8,7 +8,7 @@ class Authentication {
   static Authentication get instance => _instance;
 
   Future<User> signUpWithEmailAndPassword(String email, String password) async {
-    UserCredential result = await _auth.createUserWithEmailAndPassword(
+    final result = await _auth.createUserWithEmailAndPassword(
       email: email.toLowerCase().trim(),
       password: password,
     );
@@ -19,7 +19,7 @@ class Authentication {
   }
 
   Future<User> signInWithEmailAndPassword(String email, String password) async {
-    UserCredential result = await _auth.signInWithEmailAndPassword(
+    final result = await _auth.signInWithEmailAndPassword(
       email: email.toLowerCase().trim(),
       password: password,
     );

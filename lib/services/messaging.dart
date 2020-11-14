@@ -1,16 +1,10 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 
-abstract class BaseMessaging {
-  void init();
-
-  Future<String> getToken();
-}
-
-class Messaging implements BaseMessaging {
+class Messaging {
   static final FirebaseMessaging _messaging = FirebaseMessaging();
 
-  static final BaseMessaging _instance = Messaging();
-  static BaseMessaging get instance => _instance;
+  static final Messaging _instance = Messaging();
+  static Messaging get instance => _instance;
 
   void init() {
     _messaging.requestNotificationPermissions();

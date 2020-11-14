@@ -11,7 +11,7 @@ class RGShared {
     @required BuildContext context,
     @required String email,
   }) {
-    if (RegExp(r".*@.*\..*").hasMatch(email)) {
+    if (RegExp(r'.*@.*\..*').hasMatch(email)) {
       return null;
     }
 
@@ -24,7 +24,7 @@ class RGShared {
   }) {
     if (password.length >= 8 &&
         password.length <= 16 &&
-        RegExp(r"^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$")
+        RegExp(r'^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$')
             .hasMatch(password)) {
       return null;
     }
