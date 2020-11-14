@@ -1,13 +1,13 @@
 // https://flutter.dev/docs/development/accessibility-and-localization/internationalization#dart-tools
 
+import 'package:Resume/l10n/messages_all.dart';
+import 'package:Resume/utils/rg-constants.dart';
 // flutter pub run intl_translation:extract_to_arb --output-dir=lib/l10n lib/bn-localizations.dart
 // flutter pub run intl_translation:generate_from_arb \
 // --output-dir=lib/l10n --no-use-deferred-loading \
 // lib/bn-localizations.dart lib/l10n/intl_*.arb
 
 import 'package:flutter/material.dart';
-import 'package:flutterstarter/l10n/messages_all.dart';
-import 'package:flutterstarter/utils/rg-constants.dart';
 import 'package:intl/intl.dart';
 
 class RGLocalizations {
@@ -34,7 +34,7 @@ class RGLocalizations {
 
   String get appName {
     return Intl.message(
-      'flutterstarter',
+      'Resume',
       name: 'appName',
       locale: localeName,
     );

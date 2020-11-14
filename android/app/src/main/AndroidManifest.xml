@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.razvangeangu.flutterstarter">
+    package="com.razvangeangu.Resume">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE"/>
@@ -11,7 +11,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="flutterstarter"
+        android:label="Resume"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
@@ -49,16 +49,16 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <!-- Accepts URIs that begin with "https://flutterstarter.com -->
+                <!-- Accepts URIs that begin with "https://Resume.com -->
                 <data android:scheme="https"
-                    android:host="flutterstarter.com" />
+                    android:host="Resume.com" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <!-- Accepts URIs that begin with "flutterstarter:// -->
-                <data android:scheme="flutterstarter" />
+                <!-- Accepts URIs that begin with "Resume:// -->
+                <data android:scheme="Resume" />
             </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.

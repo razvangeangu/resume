@@ -1,12 +1,12 @@
+import 'package:Resume/rg-localizations.dart';
+import 'package:Resume/services/messaging.dart';
+import 'package:Resume/utils/rg-constants.dart';
+import 'package:Resume/utils/rg-routes.dart';
+import 'package:Resume/utils/rg-shared.dart';
+import 'package:Resume/utils/rg-theme.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutterstarter/rg-localizations.dart';
-import 'package:flutterstarter/services/messaging.dart';
-import 'package:flutterstarter/utils/rg-constants.dart';
-import 'package:flutterstarter/utils/rg-routes.dart';
-import 'package:flutterstarter/utils/rg-shared.dart';
-import 'package:flutterstarter/utils/rg-theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
       ],
       debugShowCheckedModeBanner: false,
       navigatorKey: RGShared.instance.navigatorKey,
-      title: RGLocalizations.of(context)?.appName ?? 'flutterstarter',
+      title: RGLocalizations.of(context)?.appName ?? 'Resume',
       theme: RGTheme.light,
       darkTheme: RGTheme.dark,
       themeMode: ThemeMode.system,

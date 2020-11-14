@@ -20,9 +20,11 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'messages';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static _notInlinedMessages(_) => <String, Function> {
-    "appName" : MessageLookupByLibrary.simpleMessage("flutterstarter"),
-    "signUpEmailError" : MessageLookupByLibrary.simpleMessage("signUpEmailError"),
-    "signUpPasswordError" : MessageLookupByLibrary.simpleMessage("signUpPasswordError")
-  };
+  static _notInlinedMessages(_) => <String, Function>{
+        "appName": MessageLookupByLibrary.simpleMessage("Resume"),
+        "signUpEmailError":
+            MessageLookupByLibrary.simpleMessage("signUpEmailError"),
+        "signUpPasswordError":
+            MessageLookupByLibrary.simpleMessage("signUpPasswordError")
+      };
 }

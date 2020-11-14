@@ -37,7 +37,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.razvangeangu.flutterstarter'
+        applicationId 'com.razvangeangu.Resume'
         minSdkVersion 16
         targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()

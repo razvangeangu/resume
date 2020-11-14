@@ -1,5 +1,5 @@
+import 'package:Resume/rg-localizations.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterstarter/rg-localizations.dart';
 
 class RootPage extends StatefulWidget {
   RootPage({Key key}) : super(key: key);
