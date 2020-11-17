@@ -13,11 +13,11 @@ Widget addEducation(String institutionName, String timePeriod,
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Padding(
-        padding: EdgeInsets.fromLTRB(20, 0, 8, 12),
+        padding: EdgeInsets.only(left: 20.0, right: 8.0, bottom: 12.0),
         child: Row(
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(4),
+              borderRadius: BorderRadius.circular(4.0),
               child: Image(
                 image: NetworkImage(
                     'https://www.iconsdb.com/icons/preview/red/square-xxl.png'),
@@ -26,18 +26,19 @@ Widget addEducation(String institutionName, String timePeriod,
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 8),
+              padding: EdgeInsets.only(left: 8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     institutionName,
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                    style:
+                        TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600),
                   ),
                   Text(
                     timePeriod,
-                    style: TextStyle(fontSize: 12),
-                  )
+                    style: TextStyle(fontSize: 12.0),
+                  ),
                 ],
               ),
             ),
@@ -45,19 +46,19 @@ Widget addEducation(String institutionName, String timePeriod,
         ),
       ),
       Padding(
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 6),
+        padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 6.0),
         child: Text(
           degreeType,
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+          style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600),
         ),
       ),
       Padding(
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+        padding: EdgeInsets.symmetric(horizontal: 20.0),
         child: Text(
           description,
-          style: TextStyle(fontSize: 12),
+          style: TextStyle(fontSize: 12.0),
         ),
-      )
+      ),
     ],
   );
 }
@@ -71,20 +72,21 @@ class _RootPageState extends State<RootPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.fromLTRB(20, 64, 20, 20),
+              padding: EdgeInsets.only(
+                  top: 64.0, left: 20.0, right: 20.0, bottom: 20.0),
               child: Row(children: [
                 CircleAvatar(
-                  radius: 64,
+                  radius: 64.0,
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                  padding: EdgeInsets.only(left: 20.0),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'John Doe',
                           style: TextStyle(
-                              fontSize: 24, fontWeight: FontWeight.bold),
+                              fontSize: 24.0, fontWeight: FontWeight.bold),
                         ),
                         Text(
                           'Student',
@@ -92,25 +94,25 @@ class _RootPageState extends State<RootPage> {
                         ),
                         Row(children: [
                           Padding(
-                            padding: EdgeInsets.fromLTRB(0, 8, 0, 0),
+                            padding: EdgeInsets.only(top: 8.0),
                             child: CircleAvatar(
                               radius: 16,
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.fromLTRB(12, 8, 0, 0),
+                            padding: EdgeInsets.only(left: 12.0, top: 8.0),
                             child: CircleAvatar(
                               radius: 16,
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.fromLTRB(12, 8, 0, 0),
+                            padding: EdgeInsets.only(left: 12.0, top: 8.0),
                             child: CircleAvatar(
                               radius: 16,
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.fromLTRB(12, 8, 0, 0),
+                            padding: EdgeInsets.only(left: 12.0, top: 8.0),
                             child: CircleAvatar(
                               radius: 16,
                             ),
@@ -120,18 +122,17 @@ class _RootPageState extends State<RootPage> {
                 ),
               ]),
             ),
-            Divider(
-              color: Colors.black,
-            ),
+            Divider(),
             Padding(
-              padding: EdgeInsets.fromLTRB(20, 20, 20, 16),
+              padding: EdgeInsets.only(
+                  bottom: 16.0, top: 20.0, left: 20.0, right: 20.0),
               child: Text(
                 'Education',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600),
               ),
             ),
             addEducation('University of Bucharest', 'October 2017 - July 2021',
-                'BA Law', 'very very very very very very very very very nice!')
+                'BA Law', 'very very very very very very very very very nice!'),
           ],
         ),
       ),

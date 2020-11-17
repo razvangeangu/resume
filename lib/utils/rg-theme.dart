@@ -5,6 +5,7 @@ class RGTheme {
     return ThemeData(
       brightness: Brightness.light,
       visualDensity: VisualDensity.adaptivePlatformDensity,
+      dividerColor: Colors.black87,
     );
   }
 
@@ -12,6 +13,7 @@ class RGTheme {
     return ThemeData(
       brightness: Brightness.dark,
       visualDensity: VisualDensity.adaptivePlatformDensity,
+      dividerColor: Colors.white30,
     );
   }
 }
