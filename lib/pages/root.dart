@@ -1,3 +1,5 @@
+import 'package:Resume/pages/homePage.dart';
+import 'package:Resume/rg-localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -9,6 +11,14 @@ class RootPage extends StatefulWidget {
 }
 
 // ##############  <HEADER> #########################
+
+RGSection section = RGSection(
+  name: 'University of Bucharest',
+  description: 'Very very nice!',
+  title: 'BA Law',
+  fromDate: DateTime(2017, 07),
+  toDate: DateTime(2020, 10),
+);
 
 Widget header() {
   Widget _information() {
@@ -77,18 +87,17 @@ Widget header() {
 
 // ############################  </HEADER> #######################
 
-Widget section(String title) {
+Widget sectionTitle(BuildContext context) {
   return Padding(
     padding: EdgeInsets.only(bottom: 16.0, top: 20.0, left: 20.0, right: 20.0),
     child: Text(
-      title,
+      RGLocalizations.of(context).education,
       style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600),
     ),
   );
 }
 
-Widget addSection(String institutionName, String timePeriod, String degreeType,
-    String description) {
+Widget addSection(RGSection section) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -112,12 +121,12 @@ Widget addSection(String institutionName, String timePeriod, String degreeType,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    institutionName,
+                    section.name,
                     style:
                         TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600),
                   ),
                   Text(
-                    timePeriod,
+                    section.period(),
                     style: TextStyle(fontSize: 12.0),
                   ),
                 ],
@@ -129,14 +138,14 @@ Widget addSection(String institutionName, String timePeriod, String degreeType,
       Padding(
         padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 6.0),
         child: Text(
-          degreeType,
+          section.title,
           style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600),
         ),
       ),
       Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.0),
         child: Text(
-          description,
+          section.description,
           style: TextStyle(fontSize: 12.0),
         ),
       ),
@@ -154,9 +163,8 @@ class _RootPageState extends State<RootPage> {
           children: <Widget>[
             header(),
             Divider(),
-            section('Education'),
-            addSection('University of Bucharest', 'October 2017 - July 2021',
-                'BA Law', 'very very very very very very very very very nice!'),
+            sectionTitle(context),
+            addSection(section),
           ],
         ),
       ),

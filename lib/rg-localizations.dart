@@ -30,6 +30,14 @@ class RGLocalizations {
 
   final String localeName;
 
+  String get education {
+    return Intl.message(
+      'Education',
+      name: 'education',
+      locale: localeName,
+    );
+  }
+
   // #region "Globals"
 
   String get appName {
