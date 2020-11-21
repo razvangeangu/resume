@@ -1,12 +1,12 @@
+import 'package:Resume/rg-localizations.dart';
+import 'package:Resume/services/messaging.dart';
+import 'package:Resume/utils/rg-constants.dart';
+import 'package:Resume/utils/rg-routes.dart';
+import 'package:Resume/utils/rg-shared.dart';
+import 'package:Resume/utils/rg-theme.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:resume/rg-localizations.dart';
-import 'package:resume/services/messaging.dart';
-import 'package:resume/utils/rg-constants.dart';
-import 'package:resume/utils/rg-routes.dart';
-import 'package:resume/utils/rg-shared.dart';
-import 'package:resume/utils/rg-theme.dart';
 
 void main() {
   runApp(MyApp());

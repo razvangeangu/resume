@@ -1,5 +1,7 @@
 // https://flutter.dev/docs/development/accessibility-and-localization/internationalization#dart-tools
 
+import 'package:Resume/l10n/messages_all.dart';
+import 'package:Resume/utils/rg-constants.dart';
 // flutter pub run intl_translation:extract_to_arb --output-dir=lib/l10n lib/bn-localizations.dart
 // flutter pub run intl_translation:generate_from_arb \
 // --output-dir=lib/l10n --no-use-deferred-loading \
@@ -7,8 +9,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:resume/l10n/messages_all.dart';
-import 'package:resume/utils/rg-constants.dart';
 
 class RGLocalizations {
   RGLocalizations(this.localeName);
