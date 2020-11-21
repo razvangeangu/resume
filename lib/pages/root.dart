@@ -1,5 +1,5 @@
-import 'package:Resume/pages/home-page.dart';
 import 'package:flutter/material.dart';
+import 'package:resume/pages/home-page.dart';
 
 class RootPage extends StatefulWidget {
   RootPage({Key key}) : super(key: key);
