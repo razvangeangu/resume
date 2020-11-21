@@ -1,7 +1,7 @@
-import 'package:Resume/models/firestore/rg-section-entry.dart';
-import 'package:Resume/utils/rg-constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:resume/models/firestore/rg-section-entry.dart';
+import 'package:resume/utils/rg-constants.dart';
 
 import '../rg-localizations.dart';
 
