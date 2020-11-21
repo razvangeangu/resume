@@ -1,7 +1,7 @@
+import 'package:Resume/pages/homePage.dart';
+import 'package:Resume/rg-localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:resume/pages/homePage.dart';
-import 'package:resume/rg-localizations.dart';
 
 class RootPage extends StatefulWidget {
   RootPage({Key key}) : super(key: key);

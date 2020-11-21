@@ -1,4 +1,4 @@
-package com.razvangeangu.resume
+package com.razvangeangu.Resume
 
 import io.flutter.embedding.android.FlutterActivity
 
