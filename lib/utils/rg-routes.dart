@@ -1,4 +1,4 @@
-import 'package:Resume/pages/root.dart';
+import 'package:resume/pages/root.dart';
 
 class RGRoutes {
   static const String root = '/';

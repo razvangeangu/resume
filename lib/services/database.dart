@@ -1,5 +1,5 @@
-import 'package:Resume/models/firestore/rg-user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:resume/models/firestore/rg-user.dart';
 
 class FirestoreRoutes {
   static String get users {

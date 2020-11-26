@@ -9,7 +9,8 @@ class RGUser {
   });
 
   static RGUser fromSnapshot(DocumentSnapshot snapshot) {
-    final user = RGUser(uid: null);
+    // ignore: missing_required_param
+    final user = RGUser();
     if (snapshot == null) return user;
 
     user.uid = snapshot.id;
