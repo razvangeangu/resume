@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:resume/models/firestore/rg-section-entry.dart';
 import 'package:resume/models/firestore/rg-section.dart';
@@ -87,6 +88,8 @@ class _HomePageState extends State<HomePage> {
 
   // #region "buildSection"
 
+  final url = 'https://drept.unibuc.ro/';
+
   Widget _buildSectionEntry(RGSectionEntry section) {
     return Padding(
       padding: EdgeInsets.only(
@@ -160,11 +163,32 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.symmetric(
               horizontal: kHorizontalPadding,
             ),
-            child: Text(
-              section.description,
-              style: TextStyle(
-                fontSize: 12.0,
-              ),
+            // child: Text(
+            //   section.description,
+            //   style: TextStyle(
+            //     fontSize: 12.0,
+            //   ),
+
+            // child: FutureBuilder(
+            //     future: rootBundle.loadString(section.description),
+            //     builder:
+            //         (BuildContext context, AsyncSnapshot<String> snapshot) {
+            //       if (snapshot.hasData) {
+            //         return Markdown(
+            //           data: snapshot.data,
+            //           shrinkWrap: true,
+            //           onTapLink: null,
+            //         );
+            //       }
+
+            //       return Center(
+            //         child: CircularProgressIndicator(),
+            //       );
+            //     }),
+            child: Markdown(
+              data: section.description,
+              shrinkWrap: true,
+              onTapLink: null,
             ),
           ),
         ],
@@ -197,14 +221,15 @@ class _HomePageState extends State<HomePage> {
         entries: [
           RGSectionEntry(
             name: 'University of Bucharest',
-            description: 'Very very nice!',
+            description:
+                'assets/description.md [link](https://www.google.com) # Title',
             title: 'BA Law',
             fromDate: DateTime(2017, 07),
             toDate: DateTime(2020, 10),
           ),
           RGSectionEntry(
             name: 'University of Bucharest',
-            description: 'Very very nice!',
+            description: 'assets/description.md',
             title: 'BA Law',
             fromDate: DateTime(2017, 07),
             toDate: DateTime(2020, 10),
