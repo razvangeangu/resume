@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:resume/models/firestore/rg-section-entry.dart';
 import 'package:resume/models/firestore/rg-section.dart';
 import 'package:resume/utils/rg-constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -163,32 +164,14 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.symmetric(
               horizontal: kHorizontalPadding,
             ),
-            // child: Text(
-            //   section.description,
-            //   style: TextStyle(
-            //     fontSize: 12.0,
-            //   ),
-
-            // child: FutureBuilder(
-            //     future: rootBundle.loadString(section.description),
-            //     builder:
-            //         (BuildContext context, AsyncSnapshot<String> snapshot) {
-            //       if (snapshot.hasData) {
-            //         return Markdown(
-            //           data: snapshot.data,
-            //           shrinkWrap: true,
-            //           onTapLink: null,
-            //         );
-            //       }
-
-            //       return Center(
-            //         child: CircularProgressIndicator(),
-            //       );
-            //     }),
             child: Markdown(
               data: section.description,
               shrinkWrap: true,
-              onTapLink: null,
+              onTapLink: (text, href, title) async {
+                if (await canLaunch(url)) {
+                  await launch(url);
+                }
+              },
             ),
           ),
         ],
@@ -221,8 +204,8 @@ class _HomePageState extends State<HomePage> {
         entries: [
           RGSectionEntry(
             name: 'University of Bucharest',
-            description:
-                'assets/description.md [link](https://www.google.com) # Title',
+            description: '''blah blah [link](https://www.google.com)
+# Title''',
             title: 'BA Law',
             fromDate: DateTime(2017, 07),
             toDate: DateTime(2020, 10),
