@@ -26,7 +26,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       localeResolutionCallback:
-          (Locale locale, Iterable<Locale> supportedLocales) => locale,
+          (Locale locale, Iterable<Locale> supportedLocales) {
+        if (supportedLocales.contains(locale)) {
+          return locale;
+        }
+
+        return Locale(kDefaultLocaleName);
+      },
       localizationsDelegates: [
         const RGLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
