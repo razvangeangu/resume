@@ -89,8 +89,6 @@ class _HomePageState extends State<HomePage> {
 
   // #region "buildSection"
 
-  final url = 'https://drept.unibuc.ro/';
-
   Widget _buildSectionEntry(RGSectionEntry section) {
     return Padding(
       padding: EdgeInsets.only(
@@ -168,8 +166,8 @@ class _HomePageState extends State<HomePage> {
               data: section.description,
               shrinkWrap: true,
               onTapLink: (text, href, title) async {
-                if (await canLaunch(url)) {
-                  await launch(url);
+                if (await canLaunch(href)) {
+                  await launch(href);
                 }
               },
             ),
