@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:resume/models/firestore/rg-section-entry.dart';
 import 'package:resume/models/firestore/rg-section.dart';
 import 'package:resume/utils/rg-constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -160,11 +162,14 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.symmetric(
               horizontal: kHorizontalPadding,
             ),
-            child: Text(
-              section.description,
-              style: TextStyle(
-                fontSize: 12.0,
-              ),
+            child: Markdown(
+              data: section.description,
+              shrinkWrap: true,
+              onTapLink: (text, href, title) async {
+                if (await canLaunch(href)) {
+                  await launch(href);
+                }
+              },
             ),
           ),
         ],
@@ -197,14 +202,15 @@ class _HomePageState extends State<HomePage> {
         entries: [
           RGSectionEntry(
             name: 'University of Bucharest',
-            description: 'Very very nice!',
+            description: '''blah blah [link](https://www.google.com)
+# Title''',
             title: 'BA Law',
             fromDate: DateTime(2017, 07),
             toDate: DateTime(2020, 10),
           ),
           RGSectionEntry(
             name: 'University of Bucharest',
-            description: 'Very very nice!',
+            description: 'assets/description.md',
             title: 'BA Law',
             fromDate: DateTime(2017, 07),
             toDate: DateTime(2020, 10),
