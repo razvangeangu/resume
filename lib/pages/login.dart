@@ -2,6 +2,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/components/rg-button.dart';
 import 'package:resume/components/rg-input.dart';
+import 'package:resume/rg-localizations.dart';
+import 'package:resume/utils/rg-constants.dart';
 import 'package:resume/utils/rg-routes.dart';
 
 class LoginPage extends StatefulWidget {
@@ -13,10 +15,14 @@ class _LoginPageState extends State<LoginPage> {
   Widget _buildSignUpPrompt() {
     return Text.rich(
       TextSpan(
-        text: " You don't have an account? ",
+        text: RGLocalizations.of(context).loginNoAccount,
         children: [
           TextSpan(
-            text: 'Sign Up!',
+            text: RGLocalizations.of(context).loginSignUp,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Theme.of(context).primaryColor,
+            ),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
                 Navigator.pushNamed(context, RGRoutes.signup);
@@ -29,7 +35,12 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _buildForgotPassword() {
     return FlatButton(
-      child: Text('Forgot your password?'),
+      child: Text(
+        RGLocalizations.of(context).loginForgotPassword,
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
       onPressed: () {
         Navigator.pushNamed(context, RGRoutes.forgotPassword);
       },
@@ -38,16 +49,50 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          RGInput(),
-          RGInput(),
-          RGButton(label: 'Sign In'),
-          _buildSignUpPrompt(),
-          _buildForgotPassword(),
-        ],
+    return GestureDetector(
+      onTap: () {
+        dismissKeyboard(context);
+      },
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.only(
+            bottom: kVerticalPadding * 3.0,
+            left: kHorizontalPadding,
+            right: kHorizontalPadding,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(bottom: kVerticalPadding),
+                child: RGInput(
+                  placeholder:
+                      RGLocalizations.of(context).loginEmailPlaceholder,
+                  prefixIcon: Icon(Icons.email),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: kVerticalPadding),
+                child: RGInput(
+                  placeholder:
+                      RGLocalizations.of(context).loginPasswordPlaceholder,
+                  prefixIcon: Icon(Icons.fingerprint),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: kVerticalPadding),
+                child: RGButton(
+                  label: RGLocalizations.of(context).loginSignIn,
+                  onPressed: () {
+                    Navigator.pushNamed(context, RGRoutes.home);
+                  },
+                ),
+              ),
+              _buildSignUpPrompt(),
+              _buildForgotPassword(),
+            ],
+          ),
+        ),
       ),
     );
   }

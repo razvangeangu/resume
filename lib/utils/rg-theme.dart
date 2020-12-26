@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/utils/rg-colors.dart';
 
 class RGTheme {
   static final _textTheme = TextTheme(
@@ -12,6 +13,14 @@ class RGTheme {
       visualDensity: VisualDensity.adaptivePlatformDensity,
       dividerColor: Colors.black87,
       textTheme: _textTheme,
+      scaffoldBackgroundColor: RGColors.primary[50],
+      primaryColor: RGColors.primary,
+      primarySwatch: RGColors.primary,
+      primaryColorDark: RGColors.primary,
+      buttonTheme: ButtonThemeData(
+        buttonColor: RGColors.primary,
+        textTheme: ButtonTextTheme.primary,
+      ),
     );
   }
 
@@ -21,6 +30,14 @@ class RGTheme {
       visualDensity: VisualDensity.adaptivePlatformDensity,
       dividerColor: Colors.white30,
       textTheme: _textTheme,
+      scaffoldBackgroundColor: RGColors.primary[900],
+      primaryColor: RGColors.primary,
+      primarySwatch: RGColors.primary,
+      primaryColorDark: RGColors.primary,
+      buttonTheme: ButtonThemeData(
+        buttonColor: RGColors.primary,
+        textTheme: ButtonTextTheme.primary,
+      ),
     );
   }
 }
