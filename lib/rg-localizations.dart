@@ -58,6 +58,18 @@ class RGLocalizations {
 
   // #endregion "Globals"
 
+  // #region "ForgotPassword"
+
+  String get forgotPasswordRecover {
+    return Intl.message(
+      'Recover my password',
+      name: 'forgotPasswordRecover',
+      locale: localeName,
+    );
+  }
+
+  // #endregion "ForgotPassword"
+
   // #region "Login"
 
   String get loginEmailPlaceholder {

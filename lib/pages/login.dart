@@ -21,7 +21,9 @@ class _LoginPageState extends State<LoginPage> {
             text: RGLocalizations.of(context).loginSignUp,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).brightness == Brightness.light
+                  ? Theme.of(context).primaryColor
+                  : Theme.of(context).textTheme.bodyText2.color,
             ),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
@@ -81,11 +83,17 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: kVerticalPadding),
-                child: RGButton(
-                  label: RGLocalizations.of(context).loginSignIn,
-                  onPressed: () {
-                    Navigator.pushNamed(context, RGRoutes.home);
-                  },
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: RGButton(
+                        label: RGLocalizations.of(context).loginSignIn,
+                        onPressed: () {
+                          Navigator.pushNamed(context, RGRoutes.home);
+                        },
+                      ),
+                    ),
+                  ],
                 ),
               ),
               _buildSignUpPrompt(),

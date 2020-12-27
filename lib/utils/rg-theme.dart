@@ -21,6 +21,7 @@ class RGTheme {
         buttonColor: RGColors.primary,
         textTheme: ButtonTextTheme.primary,
       ),
+      accentColor: RGColors.primary,
     );
   }
 
@@ -35,8 +36,13 @@ class RGTheme {
       primarySwatch: RGColors.primary,
       primaryColorDark: RGColors.primary,
       buttonTheme: ButtonThemeData(
-        buttonColor: RGColors.primary,
+        buttonColor: RGColors.primary[600],
         textTheme: ButtonTextTheme.primary,
+      ),
+      accentColor: RGColors.primary,
+      inputDecorationTheme: InputDecorationTheme(
+        fillColor: RGColors.primary[800],
+        filled: true,
       ),
     );
   }

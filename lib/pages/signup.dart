@@ -37,22 +37,24 @@ class _SignupPageState extends State<SignupPage> {
                 prefixIcon: Icon(Icons.fingerprint),
               ),
             ),
-            Wrap(
-              children: [
-                IconButton(
-                  onPressed: () {
-                    Navigator.of(context).maybePop();
-                  },
-                  icon: Icon(Icons.arrow_back_ios),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: kVerticalPadding),
-                  child: RGButton(
-                    label: RGLocalizations.of(context).loginSignIn,
-                    onPressed: () {},
+            Padding(
+              padding: const EdgeInsets.only(bottom: kVerticalPadding),
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.of(context).maybePop();
+                    },
+                    icon: Icon(Icons.arrow_back_ios),
                   ),
-                ),
-              ],
+                  Expanded(
+                    child: RGButton(
+                      label: RGLocalizations.of(context).loginSignIn,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
