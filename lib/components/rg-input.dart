@@ -3,10 +3,18 @@ import 'package:flutter/material.dart';
 class RGInput extends StatelessWidget {
   final String placeholder;
   final Widget prefixIcon;
+  final TextEditingController controller;
+  final String Function(String) validator;
+  final TextInputType keyboardType;
+  final void Function(String) onFieldSubmitted;
 
   RGInput({
     this.placeholder,
     this.prefixIcon,
+    this.controller,
+    this.validator,
+    this.keyboardType = TextInputType.text,
+    this.onFieldSubmitted,
   });
 
   @override
@@ -24,6 +32,12 @@ class RGInput extends StatelessWidget {
         ],
       ),
       child: TextFormField(
+        controller: controller,
+        validator: validator,
+        autocorrect: false,
+        keyboardType: keyboardType,
+        obscureText: keyboardType == TextInputType.visiblePassword,
+        onFieldSubmitted: onFieldSubmitted,
         decoration: InputDecoration(
           hintText: placeholder,
           prefixIcon: prefixIcon,
