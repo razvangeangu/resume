@@ -1,25 +1,21 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 
 class Messaging {
-  static final FirebaseMessaging _messaging = FirebaseMessaging();
+  static final FirebaseMessaging _messaging = FirebaseMessaging.instance;
 
   static final Messaging _instance = Messaging();
   static Messaging get instance => _instance;
 
   void init() {
-    _messaging.requestNotificationPermissions();
+    _messaging.requestPermission();
 
-    _messaging.configure(
-      onMessage: (Map<String, dynamic> message) async {
-        print('on message $message');
-      },
-      onResume: (Map<String, dynamic> message) async {
-        print('on resume $message');
-      },
-      onLaunch: (Map<String, dynamic> message) async {
-        print('on launch $message');
-      },
-    );
+    FirebaseMessaging.onMessage.listen((message) {
+      print(message.toString());
+    });
+
+    FirebaseMessaging.onMessageOpenedApp.listen((message) {
+      print(message.toString());
+    });
 
     _messaging.getToken().then((token) {
       print('FirebaseMessaging token: $token');
