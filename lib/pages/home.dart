@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
         ),
         padding: EdgeInsets.only(
           right: kHorizontalPadding / 2.0,
-          top: hVerticalPadding / 2.0,
+          top: kVerticalPadding / 2.0,
         ),
         constraints: BoxConstraints(),
         iconSize: 32.0,
@@ -70,10 +70,10 @@ class _HomePageState extends State<HomePage> {
     return Container(
       child: Padding(
         padding: EdgeInsets.only(
-          top: hVerticalPadding * 4.0,
+          top: kVerticalPadding * 4.0,
           left: kHorizontalPadding,
           right: kHorizontalPadding,
-          bottom: hVerticalPadding * 5.0 / 4.0,
+          bottom: kVerticalPadding * 5.0 / 4.0,
         ),
         child: Row(
           children: [
@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
   Widget _buildSectionEntry(RGSectionEntry section) {
     return Padding(
       padding: EdgeInsets.only(
-        bottom: hVerticalPadding * 3.0 / 4.0,
+        bottom: kVerticalPadding * 3.0 / 4.0,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.only(
               left: kHorizontalPadding,
               right: kHorizontalPadding * 4.0 / 10.0,
-              bottom: hVerticalPadding * 3.0 / 4.0,
+              bottom: kVerticalPadding * 3.0 / 4.0,
             ),
             child: Row(
               children: [
@@ -148,7 +148,7 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.only(
               left: kHorizontalPadding,
               right: kHorizontalPadding,
-              bottom: hVerticalPadding / 3,
+              bottom: kVerticalPadding / 3,
             ),
             child: Text(
               section.title,
@@ -182,8 +182,8 @@ class _HomePageState extends State<HomePage> {
   Widget _buildSectionTitle(String title) {
     return Padding(
       padding: EdgeInsets.only(
-        bottom: hVerticalPadding,
-        top: hVerticalPadding * 5.0 / 4.0,
+        bottom: kVerticalPadding,
+        top: kVerticalPadding * 5.0 / 4.0,
         left: kHorizontalPadding,
         right: kHorizontalPadding,
       ),
@@ -238,23 +238,25 @@ class _HomePageState extends State<HomePage> {
       ),
     ];
 
-    return Container(
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            _buildHeader(),
-            ...sections
-                .map(
-                  (section) => [
-                    Divider(),
-                    _buildSectionTitle(section.name),
-                    ...section.entries.map(
-                        (sectionEntry) => _buildSectionEntry(sectionEntry)),
-                  ],
-                )
-                .expand((element) => element),
-          ],
+    return Scaffold(
+      body: Container(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              _buildHeader(),
+              ...sections
+                  .map(
+                    (section) => [
+                      Divider(),
+                      _buildSectionTitle(section.name),
+                      ...section.entries.map(
+                          (sectionEntry) => _buildSectionEntry(sectionEntry)),
+                    ],
+                  )
+                  .expand((element) => element),
+            ],
+          ),
         ),
       ),
     );

@@ -58,6 +58,70 @@ class RGLocalizations {
 
   // #endregion "Globals"
 
+  // #region "ForgotPassword"
+
+  String get forgotPasswordRecover {
+    return Intl.message(
+      'Recover my password',
+      name: 'forgotPasswordRecover',
+      locale: localeName,
+    );
+  }
+
+  // #endregion "ForgotPassword"
+
+  // #region "Login"
+
+  String get loginEmailPlaceholder {
+    return Intl.message(
+      'Email',
+      name: 'Email',
+      locale: localeName,
+    );
+  }
+
+  String get loginPasswordPlaceholder {
+    return Intl.message(
+      'Password',
+      name: 'Password',
+      locale: localeName,
+    );
+  }
+
+  String get loginSignIn {
+    return Intl.message(
+      'Sign In',
+      name: 'Sign In',
+      locale: localeName,
+    );
+  }
+
+  String get loginForgotPassword {
+    return Intl.message(
+      'Forgot your password?',
+      name: 'loginForgotPassword',
+      locale: localeName,
+    );
+  }
+
+  String get loginSignUp {
+    return Intl.message(
+      'Sign Up!',
+      name: 'loginSignUp',
+      locale: localeName,
+    );
+  }
+
+  String get loginNoAccount {
+    return Intl.message(
+      "You don't have an account? ",
+      name: 'loginNoAccount',
+      locale: localeName,
+    );
+  }
+
+  // #endregion "Login"
+
   // #region "Sign Up"
 
   String get signUpEmailError {
